@@ -11,12 +11,10 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
   }
-
-
   // tslint:disable-next-line:typedef
   async fetchData(){
-    const showDetails = await $.ajax('http://api.tvmaze.com/lookup/shows?tvrage=24493');
     const search = $('#txtName').val();
+    const showDetails = await $.ajax(`http://api.tvmaze.com/singlesearch/shows?q= ${search}`);
     console.log(showDetails);
     if (search === showDetails.name.toLowerCase() || search === showDetails.name.toUpperCase()) {
       this.showData(showDetails.name, showDetails.summary, showDetails.image.original);
