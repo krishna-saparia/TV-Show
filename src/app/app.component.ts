@@ -9,6 +9,7 @@ import * as $ from 'jquery';
 export class AppComponent implements OnInit{
   title = 'TV-Show';
 
+
   ngOnInit(): void {
   }
   // tslint:disable-next-line:typedef
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit{
     } else {
       alert('The show which are you looking for either not available or check your spelling ');
     }
+    /*this.renderResult(showDetails.name);*/
   }
 
 
@@ -33,8 +35,11 @@ export class AppComponent implements OnInit{
       const header = document.createElement('h1');
       const img = document.createElement('img');
       const summaryTag = document.createElement('div');
+      const Ulist = document.createElement('ul');
+      const oList = document.createElement('li');
 
       // add data
+
       header.appendChild(document.createTextNode(name));
       // header.appendChild(headText)
       img.setAttribute('src', imgUrl);
@@ -47,5 +52,19 @@ export class AppComponent implements OnInit{
       // main.appendChild(summaryTag)
       main.innerHTML += summary;
     }
+
+  // tslint:disable-next-line:typedef
+    renderResult(results){
+      const list = document.getElementById('txtName');
+      list.innerHTML = '';
+      results.forEach(result => {
+        const element = document.createElement('li');
+        element.innerText = result;
+        list.appendChild(element);
+      });
+    }
+
+
+
 
 }

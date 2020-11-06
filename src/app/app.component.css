@@ -1,0 +1,24 @@
+#header-desktop {
+  font-size: 0px;
+  position: initial;
+  z-index: 20;
+  height: 34px;
+  width: 100%;
+  top: 50px;
+  left: 0px;
+
+}
+#header-desktop .container-logo {
+
+  display: inline-block;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+}
+
+nav{
+  margin-top: 3em;
+}
